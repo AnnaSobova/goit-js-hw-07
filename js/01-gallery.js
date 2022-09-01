@@ -1,42 +1,7 @@
 
-// // Change code below this line
-// const galleryRoot = document.querySelector('.gallery');
-// const galleryImages = createGallery(galleryItems);
-// galleryRoot.insertAdjacentHTML('afterbegin', galleryImages);
-// galleryRoot.addEventListener('click', handleClickOnImage);
-
-// const modalInstance = getModal();
-
-// function createGallery(imagesConfig = []) {
-//     return imagesConfig
-//     .map(({ preview, original, description})=>{
-//         return `
-//         <img class="gallery-item" src=${preview}
-//         data-source=${original} 
-//         alt=${description}/>`;
-      
-//     })
-//     .join('');
-// }
-
-// function handleClickOnImage({target}){
-//     if (!target.classList.contains('gallery-item')) return;
-//     setModalImage(target.dataset.source);
-//     modalInstance.show();
-//     window.addEventListener('keydown', onEscape);
-//     function onEscape(evt){
-//         if (evt.code === ESC_KEY_CODE){
-//             modalInstance.close();
-//             window.removeEventListener('keydown', onEscape);
-//         }
-//     }
-// }
-
-// console.log(galleryItems);
-
 import { galleryItems } from './gallery-items.js';
 
-const makeGalleryItemMarkup = (arr) => {
+const makeGalleryItem= (arr) => {
     return arr
         .map(({ description: descr, preview, original: orig }) => {
             return `<div class="gallery__item">
@@ -54,7 +19,7 @@ const makeGalleryItemMarkup = (arr) => {
 };
 
 const galleryContainerRef = document.querySelector('.gallery');
-galleryContainerRef.innerHTML = makeGalleryItemMarkup(galleryItems);
+galleryContainerRef.innerHTML = makeGalleryItem(galleryItems);
 
 const createLightboxInstance = (e) => {
     const targetedImgUrl = e.target.dataset.source;
