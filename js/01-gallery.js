@@ -44,3 +44,5 @@ const onGalleryImgClick = (e) => {
 };
 
 galleryContainerRef.addEventListener('click', onGalleryImgClick);
+
+console.log(galleryItems);
