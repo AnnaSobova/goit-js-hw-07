@@ -15,10 +15,10 @@ const makeGalleryItem = (arr) => {
     galleryContainerRef.innerHTML = makeGalleryItem(galleryItems);
 
 
-    const lightbox = new SimpleLightbox('.gallery a', {
+    const lightboxSlider = new SimpleLightbox('.gallery a', {
         sourceAttr: 'href',
         captions: true,
-        captionsData: title,
+        captionsData: 'title',
         captionPosition: 'bottom',
         captionDelay: 250,
         loop: true,
